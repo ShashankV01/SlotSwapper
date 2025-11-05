@@ -3,6 +3,8 @@ SlotSwapper App
 SlotSwapper is a peer-to-peer scheduling platform that enables users to mark calendar slots as swappable and exchange them with others.
 It simplifies schedule coordination between colleagues, teams, or students by allowing mutually beneficial slot swaps.
 
+<img width="1550" height="1031" alt="Screenshot 2025-11-05 155007" src="https://github.com/user-attachments/assets/7ba163ff-9cf5-464a-9c0e-461330db065c" />
+
 Features:
 User Authentication: User Sign-up and Login using Email and Password, Passwords hashed using bcrypt.js, Session management via JWT (JSON Web Tokens), Protected API routes requiring authorization headers
 Calendar Management: Create, view, edit, and delete your events, Event fields include title, startTime, endTime, status — (BUSY, SWAPPABLE, or SWAP_PENDING), Mark an event as Swappable to make it visible to others
@@ -55,3 +57,4 @@ Tech stack:
 | **Authentication**   | JWT (JSON Web Token)                   |
 | **Styling**          | Basic CSS / Tailwind (optional)        |
 | **Package Managers** | npm or yarn                            |
+
