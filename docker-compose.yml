@@ -1,0 +1,33 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    command: sh -c "npm install && npm run dev"
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - NODE_ENV=development
+      - PORT=4000
+      - JWT_SECRET=change_this_secret
+      - DATABASE_PATH=/data/dev.sqlite
+    volumes:
+      - backend_data:/data
+
+  frontend:
+    build:
+      context: ./frontend
+    command: sh -c "npm install && npm run dev -- --host"
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+    environment:
+      - VITE_API_URL=http://host.docker.internal:4000/api
+
+volumes:
+  backend_data:
